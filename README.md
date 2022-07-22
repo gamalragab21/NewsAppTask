@@ -10,13 +10,9 @@ News App used to show update news in the world,
  # Screenshots
 
 <img src="https://user-images.githubusercontent.com/67482991/180569780-6361dc0a-5ca9-42a0-a589-90394cab217f.png" width="200">&nbsp;
-
 <img src="https://user-images.githubusercontent.com/67482991/180569861-2b5a3d85-9a45-451f-8b2a-24b6bf8011d2.png" width="200">&nbsp;
-
 <img src="https://user-images.githubusercontent.com/67482991/180569994-d9010084-2a7f-4335-b4de-cbcc7f4734e1.png" width="200">&nbsp;
-
 <img src="https://user-images.githubusercontent.com/67482991/180570033-b3ebd189-cb6f-4cc1-9a2c-be466922063f.png" width="200">&nbsp;
-
 <img src="https://user-images.githubusercontent.com/67482991/180570102-619625da-1f59-43a0-8492-9f10f2efb050.png" width="200">&nbsp;
 
 
