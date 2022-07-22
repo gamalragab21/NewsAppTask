@@ -28,7 +28,6 @@ used [dagger hilt, coroutines, navigation components, LiveData, Skelton patterns
 * [Flow](https://developer.android.com/kotlin/flow) - In coroutines, a flow is a type that can emit multiple values sequentially, as opposed to suspend functions that return only a single value. For example, you can use a flow to receive live updates from a database.
 * [Navigation Component](https://developer.android.com/guide/navigation/navigation-getting-started) - To handle app navigation.
 * [Multidex](https://developer.android.com/studio/build/multidex) - To enable creating multi dex files because of using set of libraries that reached the maximum size of single dex file.
-* [Room DB](https://developer.android.com/training/data-storage/room) - To manage SQLite database easily and avoid a lot boilerplate code.
 * [Model-View-ViewModel(MVVM)](https://developer.android.com/topic/architecture) - Offers an implementation of observer design pattern.
 * [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) - notifies views of any database changes in an observer way.
 * [Retrofit](https://square.github.io/retrofit/) - A type-safe HTTP client for Android and Java
