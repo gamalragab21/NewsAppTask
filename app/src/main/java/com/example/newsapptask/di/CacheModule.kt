@@ -18,6 +18,6 @@ object CacheModule {
 
     @Singleton
     @Provides
-    fun provideComplexPreference(@ApplicationContext context: Context,): ComplexPreferences =ComplexPreferences(context, PREF_FILE, MODE_PRIVATE)
+    fun provideComplexPreference(@ApplicationContext context: Context): ComplexPreferences =ComplexPreferences(context, PREF_FILE, MODE_PRIVATE)
 
 }

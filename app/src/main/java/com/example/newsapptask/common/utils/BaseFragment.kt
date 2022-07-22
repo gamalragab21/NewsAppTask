@@ -2,13 +2,13 @@ package com.example.newsapptask.common.utils
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import com.example.newsapptask.data.cache.ComplexPreferences
+import timber.log.Timber
 import javax.inject.Inject
 
 
@@ -36,7 +36,7 @@ abstract  class BaseFragment<Binding:ViewBinding>: Fragment() {
         try {
             uiCommunicationListener = context as UICommunicationListener
         } catch (e: ClassCastException) {
-            Log.e("AppDebug", "onAttach: $context must implement UICommunicationListener")
+            Timber.e("onAttach:  $context must implement UICommunicationListener")
         }
     }
 

@@ -35,13 +35,13 @@ class MainActivity : AppCompatActivity(),UICommunicationListener{
         inflater = navHostFragment.navController.navInflater
         graph = inflater.inflate(R.navigation.navigation_graph)
         visibilityNavElements(navHostFragment.navController)
-        navHostFragment.navController.setGraph(graph)
+        navHostFragment.navController.graph = graph
         onNewIntent(intent)
     }
 
     private fun visibilityNavElements(navController: NavController) {
         graph.startDestination = NewsIds.mainFragment
-        navController.addOnDestinationChangedListener { _, destination, _ ->
+        navController.addOnDestinationChangedListener { _, _, _ ->
 
 //            when (destination.id) {
 //                NewsIds.loginFragment,
@@ -54,9 +54,6 @@ class MainActivity : AppCompatActivity(),UICommunicationListener{
 //                }
 //            }
         }
-    }
-    override fun onSupportNavigateUp(): Boolean {
-        return super.onSupportNavigateUp()
     }
 
 

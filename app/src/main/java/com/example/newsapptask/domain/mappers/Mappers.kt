@@ -1,6 +1,5 @@
 package com.example.newsapptask.domain.mappers
 
-import com.example.newsapptask.data.models.NewsDto
 import com.example.newsapptask.data.models.ResultDto
 import com.example.newsapptask.domain.models.NewsData
 

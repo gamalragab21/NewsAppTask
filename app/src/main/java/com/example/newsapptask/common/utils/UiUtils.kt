@@ -1,5 +1,6 @@
 package com.example.newsapptask.common.utils
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
@@ -24,6 +25,8 @@ import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.asRequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
+import timber.log.Timber
 import java.io.File
 import java.io.InputStream
 import java.lang.Exception
@@ -31,8 +34,6 @@ import java.math.BigDecimal
 import java.math.RoundingMode
 import java.net.HttpURLConnection
 import java.net.URL
-import java.text.SimpleDateFormat
-import java.util.*
 import kotlin.collections.ArrayList
 
 
@@ -53,22 +54,20 @@ fun NavController.navigateSafely(
     }
 }
 fun String.toRequestBody(): RequestBody {
-    return RequestBody.create("multipart/form-data".toMediaTypeOrNull(), this)
+    return this.toRequestBody("multipart/form-data".toMediaTypeOrNull())
 }
-
 
 
 fun Uri.multipartBody(filedName: String, context: Context): MultipartBody.Part {
-    var path: String = getFilePath(context)// "file:///mnt/sdcard/FileName.mp3"
-    var originalFile = File(path);
-    var fileRequestBody: RequestBody =
+    val path: String = getFilePath(context)// "file:///mnt/sdcard/FileName.mp3"
+    val originalFile = File(path)
+    val fileRequestBody: RequestBody =
         originalFile.absoluteFile.asRequestBody("multipart/form-data".toMediaTypeOrNull())
 
-    var file = MultipartBody.Part.createFormData(filedName, originalFile.name, fileRequestBody)
-
-    return file
+    return MultipartBody.Part.createFormData(filedName, originalFile.name, fileRequestBody)
 }
 
+@SuppressLint("Recycle")
 fun Uri.getFilePath(context: Context): String {
     var filePath = ""
     val wholeID = DocumentsContract.getDocumentId(this)
@@ -77,21 +76,21 @@ fun Uri.getFilePath(context: Context): String {
     val sel = MediaStore.Images.Media._ID + "=?"
     val cursor: Cursor? = context.contentResolver.query(
         MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-        column, sel, arrayOf<String>(id), null
+        column, sel, arrayOf(id), null
     )
 
     val columnIndex = cursor!!.getColumnIndex(column[0])
 
-    if (cursor!!.moveToFirst()) {
-        filePath = cursor!!.getString(columnIndex)
+    if (cursor.moveToFirst()) {
+        filePath = cursor.getString(columnIndex)
     }
-    cursor!!.close()
+    cursor.close()
     return filePath
 }
 
 
 //region deserialize Any Object To String
-public fun <T> deserializeObjectToString(`object`: T): String {
+fun <T> deserializeObjectToString(`object`: T): String {
     return Gson().toJson(`object`)
 }
 fun roundNumber(doubleNumber: Double): String {
@@ -121,7 +120,7 @@ fun String.getBitmapFromUrl(): Bitmap? {
         val input: InputStream = connection.inputStream
         BitmapFactory.decodeStream(input)
     } catch (e: Exception) {
-        Log.e("awesome", "Error in getting notification image: " + e.localizedMessage)
+        Timber.e("Error in getting notification image: " + e.localizedMessage)
         null
     }
 }

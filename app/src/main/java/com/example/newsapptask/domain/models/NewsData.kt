@@ -1,12 +1,12 @@
 package com.example.newsapptask.domain.models
 
+import android.annotation.SuppressLint
 import android.os.Parcel
 import android.os.Parcelable
 import com.example.newsapptask.data.models.MultimediaDto
-import com.google.gson.annotations.Expose
-import com.google.gson.annotations.SerializedName
 
 
+@SuppressLint("ParcelCreator")
 data class NewsData(
     var abstract: String?,
     var byline: String,

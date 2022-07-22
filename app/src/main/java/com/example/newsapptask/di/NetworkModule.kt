@@ -29,9 +29,7 @@ object NetworkModule {
     @Singleton
     @Provides
     fun provideOkHttpClient(
-        loggingInterceptor: HttpLoggingInterceptor,
-        complexPreferences: ComplexPreferences
-    ): OkHttpClient {
+        loggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
         return OkHttpClient.Builder()
             .addNetworkInterceptor(loggingInterceptor)
 //            .addInterceptor { chain ->

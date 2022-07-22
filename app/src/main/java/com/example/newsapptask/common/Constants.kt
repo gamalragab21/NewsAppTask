@@ -23,4 +23,4 @@ object Constants {
 typealias NewsAppR=com.example.newsapptask.R
 typealias NewsDrawables=com.example.newsapptask.R.drawable
 typealias NewsIds=com.example.newsapptask.R.id
-const val TAG="MYAPPLICATIONTASK"
+const val TAG="MYAPPLICATION_TASK"

@@ -1,7 +1,6 @@
 package com.example.newsapptask.presentation.fragments.main
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
@@ -11,15 +10,14 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.newsapptask.common.NewsIds
-import com.example.newsapptask.common.TAG
 import com.example.newsapptask.common.utils.BaseFragment
 import com.example.newsapptask.common.utils.navigateSafely
 import com.example.newsapptask.common.utils.snackbar
-import com.example.newsapptask.common.utils.toArrayList
 import com.example.newsapptask.databinding.FragmentMainBinding
 import com.example.newsapptask.presentation.fragments.main.adapters.MainAdapter
 import com.example.newsapptask.presentation.fragments.main.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -62,8 +60,8 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
     }
 
     override fun subscribeToObservables() {
-        viewModel.newsUiState.observe(viewLifecycleOwner) {
-            Log.i(TAG, "subscribeToObservables: $it")
+        viewModel.newsUiState.observe(viewLifecycleOwner) { it ->
+            Timber.i("subscribeToObservables: $it")
 
             uiCommunicationListener.showProgressBar(it.loading)
             it.message?.let {

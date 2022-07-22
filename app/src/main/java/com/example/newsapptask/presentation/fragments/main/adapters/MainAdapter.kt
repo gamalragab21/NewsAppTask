@@ -11,7 +11,6 @@ import com.bumptech.glide.RequestManager
 import com.example.newsapptask.databinding.ItemNewsLayoutBinding
 import com.example.newsapptask.domain.models.NewsData
 import dagger.hilt.android.qualifiers.ApplicationContext
-import kotlinx.datetime.*
 import javax.inject.Inject
 
 class MainAdapter @Inject constructor(
@@ -45,7 +44,7 @@ class MainAdapter @Inject constructor(
     }
     private val differ = AsyncListDiffer(this, diffCallback)
 
-    inner class MainViewHolder(val itemBinding: ItemNewsLayoutBinding) :
+    inner class MainViewHolder(private val itemBinding: ItemNewsLayoutBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
 
         fun bindData(item: NewsData) {
@@ -54,7 +53,7 @@ class MainAdapter @Inject constructor(
             itemBinding.itemNewsTitleTv.text = item.slugName
             itemBinding.itemNewsSectionName.text = item.section
             item.subsection.also {
-                itemBinding.itemNewsSubSectionName.text = if (it.isNotEmpty()) it else "UNKnown"
+                itemBinding.itemNewsSubSectionName.text = it.ifEmpty { "UNKnown" }
             }
             itemBinding.root.setOnClickListener {
                 onItemClickListener?.let { action ->

@@ -1,5 +1,6 @@
 package com.example.newsapptask.presentation.fragments.main.viewmodel
 
+import android.annotation.SuppressLint
 import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -19,7 +20,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    @ApplicationContext private val context: Context,
+     @ApplicationContext private val context: Context,
     private val getNewsUseCase: GetNewsUseCase
 ) : ViewModel() {
 
@@ -40,9 +41,7 @@ class MainViewModel @Inject constructor(
                     is MainUiEvent.LoadNews -> {
                         getAllNews()
                     }
-                    else -> {
 
-                    }
                 }
             }
         }

@@ -4,11 +4,10 @@ import android.content.SharedPreferences
 import com.google.gson.Gson
 import android.annotation.SuppressLint
 import android.content.Context
-import javax.inject.Inject
 
 class ComplexPreferences @SuppressLint("CommitPrefEdits") constructor(context: Context, namePreferences: String?, mode: Int) {
 
-    private val GSON = Gson()
+    private val gson = Gson()
     private var preferences: SharedPreferences? = null
     private var editor: SharedPreferences.Editor? = null
 
@@ -35,7 +34,7 @@ class ComplexPreferences @SuppressLint("CommitPrefEdits") constructor(context: C
         }
 
         try {
-            editor!!.putString(key, GSON.toJson(`object`))
+            editor!!.putString(key, gson.toJson(`object`))
         } catch (e: Exception) {
             println(e.message)
         }
@@ -47,9 +46,9 @@ class ComplexPreferences @SuppressLint("CommitPrefEdits") constructor(context: C
             null
         } else {
             try {
-                GSON.fromJson(gson, classItem)
+                this.gson.fromJson(gson, classItem)
             } catch (e: Exception) {
-                throw IllegalArgumentException("Object stored with key $key is instanceof other class")
+                throw IllegalArgumentException("Object stored with key $key is instance of other class")
             }
 
         }

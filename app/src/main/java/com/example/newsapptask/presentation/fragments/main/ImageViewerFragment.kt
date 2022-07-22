@@ -6,10 +6,7 @@ import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
-import android.os.Environment
 import android.os.StrictMode
-import android.provider.MediaStore
-import android.util.Log
 import android.view.MotionEvent
 import android.view.ScaleGestureDetector
 import android.view.ScaleGestureDetector.SimpleOnScaleGestureListener
@@ -19,12 +16,11 @@ import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.RequestManager
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
-import com.example.newsapptask.common.TAG
 import com.example.newsapptask.common.utils.BaseFragment
 import com.example.newsapptask.common.utils.snackbar
 import com.example.newsapptask.databinding.FragmentImageViewerBinding
 import dagger.hilt.android.AndroidEntryPoint
-import java.io.ByteArrayOutputStream
+import timber.log.Timber
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -53,7 +49,7 @@ class ImageViewerFragment : BaseFragment<FragmentImageViewerBinding>() {
         actions()
 
         scaleGestureDetector = ScaleGestureDetector(requireContext(), ScaleListener(binding))
-        requireView().setOnTouchListener { v, event ->
+        requireView().setOnTouchListener { _, event ->
             if (event.action == MotionEvent.ACTION_MOVE) {
                 onTouchEvent(event)
             }
@@ -62,7 +58,7 @@ class ImageViewerFragment : BaseFragment<FragmentImageViewerBinding>() {
 
     }
 
-    fun onTouchEvent(motionEvent: MotionEvent?): Boolean {
+    private fun onTouchEvent(motionEvent: MotionEvent?): Boolean {
         scaleGestureDetector!!.onTouchEvent(motionEvent)
         return true
     }
@@ -73,9 +69,9 @@ class ImageViewerFragment : BaseFragment<FragmentImageViewerBinding>() {
 
         override fun onScale(scaleGestureDetector: ScaleGestureDetector): Boolean {
             mScaleFactor *= scaleGestureDetector.scaleFactor
-            mScaleFactor = Math.max(0.1f, Math.min(mScaleFactor, 10.0f))
-            binding.icImageView.setScaleX(mScaleFactor)
-            binding.icImageView.setScaleY(mScaleFactor)
+            mScaleFactor = 0.1f.coerceAtLeast(mScaleFactor.coerceAtMost(10.0f))
+            binding.icImageView.scaleX = mScaleFactor
+            binding.icImageView.scaleY = mScaleFactor
             return true
         }
     }
@@ -110,7 +106,7 @@ class ImageViewerFragment : BaseFragment<FragmentImageViewerBinding>() {
 
         }
     }
-    fun getBitmapFromView(bmp: Bitmap?): Uri? {
+    private fun getBitmapFromView(bmp: Bitmap?): Uri? {
         var bmpUri: Uri? = null
         try {
             val file = File(requireContext().externalCacheDir, System.currentTimeMillis().toString() + ".jpg")
@@ -131,9 +127,9 @@ class ImageViewerFragment : BaseFragment<FragmentImageViewerBinding>() {
             shareIntent.type = "image/*"
             shareIntent.putExtra(Intent.EXTRA_STREAM, getBitmapFromView(bitmap))
             startActivity(Intent.createChooser(shareIntent, "Share image via.."))
-        } catch (e:Exception){
-            snackbar(e.message?:"")
-            Log.d(TAG, "shareBitmap: ${e.message}")
+        } catch (e:Exception) {
+            snackbar(e.message ?: "")
+            Timber.d("shareBitmap: " + e.message)
         }
 
     }
