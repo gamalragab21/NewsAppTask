@@ -2,10 +2,14 @@
 
 News App used to show update news in the world,
 
-#Screens
+# Screens
 1- main screen
 2- details screen 
 3- image viewer (zomming and sharing)
+
+
+## technology 
+used [dagger hilt, coroutines, navigation components, LiveData, Skelton patterns, clean code,clean architure, Glide,Retrofit, and more..]
 
  # Screenshots
 
