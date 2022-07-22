@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+
+    <color name="primary">#367FC0</color>
+    <color name="secondary1">#F2F2F2</color>
+    <color name="secondary2">#707C8F</color>
+    <color name="secondary3">#EB9D28</color>
+    <color name="secondary4">#68C435</color>
+
+    <color name="facebook_color">#367FC0</color>
+    <color name="google_color">#DD4B39</color>
+    <color name="box_back_ground">#F2F2F2</color>
+
+    <color name="bg_light">#F0FAFF</color>
+    <color name="st1_typo">#1E4C63</color>
+    <color name="nd2_typo">#4C6D7A</color>
+    <color name="rd3_typo">#A1AAAD</color>
+    <color name="blue_light">#61B6ED</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="disabled">#C0C2C2</color>
+    <color name="red">#B85A65</color>
+    <color name="red_black">#CF0000</color>
+    <color name="transelet">#27FFFFFF</color>
+    <color name="color_shape">#BF394266</color>
+    <color name="color_bg_trans">#BFF0FAFF</color>
+
+    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">@android:color/transparent</color>
+
+</resources>

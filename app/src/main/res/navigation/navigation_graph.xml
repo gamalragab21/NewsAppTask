@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_graph.xml"
+    app:startDestination="@id/mainFragment">
+
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.newsapptask.presentation.fragments.main.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.newsapptask.presentation.fragments.main.DetailsFragment"
+        android:label="DetailsFragment" >
+        <argument
+            android:name="item"
+            app:argType="com.example.newsapptask.domain.models.NewsData" />
+        <action
+            android:id="@+id/action_detailsFragment_to_imageViewerFragment"
+            app:destination="@id/imageViewerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageViewerFragment"
+        android:name="com.example.newsapptask.presentation.fragments.main.ImageViewerFragment"
+        android:label="ImageViewerFragment" >
+        <argument
+            android:name="imageUrl"
+            app:argType="string" />
+    </fragment>
+</navigation>

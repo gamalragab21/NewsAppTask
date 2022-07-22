@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/image_holder"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_130sdp"
+        android:src="@drawable/ic_image"
+        android:scaleType="fitXY"
+        app:riv_corner_radius="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginVertical="@dimen/_15sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/image_holder"
+        app:layout_constraintEnd_toStartOf="@+id/title_value_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/published_by_value_tv"
+        android:layout_margin="@dimen/_8sdp"
+        android:textSize="@dimen/_15ssp"
+        android:textColor="@color/black"
+        android:text="Title"
+        android:fontFamily="@font/opensans_bold"
+        />
+    <TextView
+        android:id="@+id/title_value_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/title_tv"
+        app:layout_constraintBottom_toBottomOf="@+id/title_tv"
+        app:layout_constraintStart_toEndOf="@id/title_tv"
+        android:layout_margin="@dimen/_8sdp"
+        android:textSize="@dimen/_13ssp"
+        android:textColor="@color/secondary2"
+        android:fontFamily="@font/prompt_semibold"
+        />
+
+    <TextView
+        android:id="@+id/published_by_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/title_value_tv"
+        app:layout_constraintEnd_toStartOf="@+id/published_by_value_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/rating_value_tv"
+
+        android:layout_margin="@dimen/_8sdp"
+        android:textSize="@dimen/_15ssp"
+        android:textColor="@color/black"
+        android:text="Published By"
+        android:fontFamily="@font/opensans_bold"
+        />
+    <TextView
+        android:id="@+id/published_by_value_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/published_by_tv"
+        app:layout_constraintBottom_toBottomOf="@+id/published_by_tv"
+        app:layout_constraintStart_toEndOf="@id/published_by_tv"
+        android:layout_margin="@dimen/_8sdp"
+        android:textSize="@dimen/_13ssp"
+        android:textColor="@color/secondary2"
+        android:fontFamily="@font/prompt_semibold"
+        />
+
+    <TextView
+        android:id="@+id/rating_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/published_by_value_tv"
+        app:layout_constraintEnd_toStartOf="@+id/rating_value_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/summary_value_tv"
+
+        android:layout_margin="@dimen/_8sdp"
+        android:textSize="@dimen/_15ssp"
+        android:textColor="@color/black"
+        android:text="Des Facet"
+        android:fontFamily="@font/opensans_bold"
+        />
+    <TextView
+        android:id="@+id/rating_value_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rating_tv"
+        app:layout_constraintBottom_toBottomOf="@+id/rating_tv"
+        app:layout_constraintStart_toEndOf="@id/rating_tv"
+        android:layout_margin="@dimen/_8sdp"
+        android:textSize="@dimen/_13ssp"
+        android:textColor="@color/secondary2"
+        android:fontFamily="@font/prompt_semibold"
+        />
+
+    <TextView
+        android:id="@+id/summary_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/rating_value_tv"
+        app:layout_constraintEnd_toStartOf="@+id/summary_value_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="@dimen/_8sdp"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintBottom_toTopOf="@+id/date_value_tv"
+
+        android:textColor="@color/black"
+        android:text="Summary"
+        android:fontFamily="@font/opensans_bold"
+        />
+    <TextView
+        android:id="@+id/summary_value_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/summary_tv"
+        app:layout_constraintBottom_toBottomOf="@+id/summary_tv"
+        app:layout_constraintStart_toEndOf="@id/summary_tv"
+        android:layout_margin="@dimen/_8sdp"
+        android:textSize="@dimen/_13ssp"
+        android:textColor="@color/secondary2"
+        android:fontFamily="@font/prompt_semibold"
+        />
+
+    <TextView
+        android:id="@+id/date_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/summary_value_tv"
+        app:layout_constraintEnd_toStartOf="@+id/date_value_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="@dimen/_8sdp"
+        android:textSize="@dimen/_15ssp"
+        android:textColor="@color/black"
+        android:text="Date"
+        android:fontFamily="@font/opensans_bold"
+        />
+    <TextView
+        android:id="@+id/date_value_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/date_tv"
+        app:layout_constraintBottom_toBottomOf="@+id/date_tv"
+        app:layout_constraintStart_toEndOf="@id/date_tv"
+        android:layout_margin="@dimen/_8sdp"
+        android:textSize="@dimen/_13ssp"
+        android:textColor="@color/secondary2"
+        android:fontFamily="@font/prompt_semibold"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

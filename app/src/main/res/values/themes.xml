@@ -1,0 +1,51 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.NewsAppTask" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/primary</item>
+        <!-- Customize your theme here. -->
+        <item name="colorPrimaryVariant">@color/secondary1</item>
+        <item name="colorPrimaryDark">@color/st1_typo</item>
+        <!-- Secondary brand color. -->
+        <item name="android:colorBackground">@color/white</item>
+        <item name="colorOnSecondary">@color/secondary4</item>
+    </style>
+<!--    <style name="Widget.BottomNavigationView" parent="Widget.Design.BottomNavigationView">-->
+<!--        <item name="fontFamily">@font/opensans_semibold</item>-->
+<!--    </style>-->
+
+<!--    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">-->
+<!--        &lt;!&ndash;        <item name="boxStrokeWidth">1dp</item>&ndash;&gt;-->
+<!--        <item name="boxBackgroundMode">outline</item>-->
+<!--        <item name="boxStrokeColor">@null</item>-->
+<!--        <item name="android:textColorHint">@color/rd3_typo</item>-->
+<!--        <item name="boxCornerRadiusBottomEnd">@dimen/_10sdp</item>-->
+<!--        <item name="boxCornerRadiusBottomStart">@dimen/_10sdp</item>-->
+<!--        <item name="boxCornerRadiusTopEnd">@dimen/_10sdp</item>-->
+<!--        <item name="boxStrokeErrorColor">@android:color/transparent</item>-->
+<!--        <item name="boxCornerRadiusTopStart">@dimen/_10sdp</item>-->
+<!--        <item name="boxBackgroundColor">@color/box_back_ground</item>-->
+<!--    </style>-->
+<!--    <style name="PrimaryColoredButton" parent="Widget.AppCompat.Button">-->
+<!--        <item name="android:background">@drawable/btn_gradient_primary_cir</item>-->
+<!--        <item name="android:textColor">@color/white</item>-->
+<!--        <item name="android:textSize">@dimen/_15ssp</item>-->
+<!--        <item name="fontFamily">@font/opensans_semibold</item>-->
+<!--    </style>-->
+<!--    <style name="GoogleColoredButton" parent="Widget.AppCompat.Button">-->
+<!--        <item name="android:background">@drawable/btn_gradient_google_cir</item>-->
+<!--        <item name="android:textColor">@color/white</item>-->
+<!--        <item name="android:textSize">@dimen/_15ssp</item>-->
+<!--        <item name="fontFamily">@font/opensans_semibold</item>-->
+<!--    </style>-->
+<!--    <style name="FaceBookColoredButton" parent="Widget.AppCompat.Button">-->
+<!--        <item name="android:background">@drawable/btn_gradient_face_book_cir</item>-->
+<!--        <item name="android:textColor">@color/white</item>-->
+<!--        <item name="android:textSize">@dimen/_15ssp</item>-->
+<!--        <item name="fontFamily">@font/opensans_semibold</item>-->
+<!--    </style>-->
+
+</resources>
